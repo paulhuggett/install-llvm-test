@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - name: Install Dependencies (LLVM)
-        uses: paulhuggett/install-llvm@05d06e32c24b03e5c303bfb4ee3be236b1968552
+        uses: paulhuggett/install-llvm@6fccaff37129b7af37bda0637d6d2002bb8a0bda
         with:
           version: 17 
 
