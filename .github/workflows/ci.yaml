@@ -1,0 +1,26 @@
+name: Build
+
+# Triggers the workflow on push or pull request events
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Test install-llvm action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+
+      - name: Install Dependencies (LLVM)
+        uses: paulhuggett/install-llvm@head
+        with:
+          version: 17 
+
+      - name: Build
+        shell: bash
+        run: |
+          clang++-17 hello.cpp
